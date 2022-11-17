@@ -8,7 +8,11 @@ const io = new Server(server);
 app.use('/static', express.static(__dirname + '/views'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/public/menu.html');
+    res.sendFile(__dirname + '/views/public/html/menu.html');
+});
+
+app.get('/salaEspera', (req, res) => {
+    res.sendFile(__dirname + '/views/public/html/sala-de-espera.html');
 });
 
 io.on('connection', (socket) => {
